@@ -217,18 +217,25 @@ button:active {
   font-size: 1.2rem;
   color: #4a6fa1;
   font-weight: 500;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   transition: all 0.3s ease;
-  min-height: 60px;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .wish-container.active {
   animation: fadeIn 0.5s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .wish-container.error {
@@ -243,11 +250,10 @@ button:active {
 
 .copyright {
   font-size: 0.8rem;
-  color: #2f3235;
+  color: #7a8ca0;
   margin-top: 25px;
   text-align: center;
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 0.8;
 }
 
@@ -262,6 +268,11 @@ button:active {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Prevent input zoom on iOS */
+  input[type="text"] {
+    font-size: 16px;
   }
 }
 
@@ -473,9 +484,9 @@ html, body {
     margin-bottom: 15px;
   }
   
-  /* .subtitle {
+  .subtitle {
     display: none;
-  } */
+  }
   
   .bulb {
     filter: blur(40px);
@@ -485,6 +496,7 @@ html, body {
   input {
     width: 100%;
     padding: 12px 15px;
+    font-size: 16px;
   }
   
   button {
@@ -506,6 +518,13 @@ html, body {
     padding: 15px;
     margin-top: auto;
     min-height: 120px;
+    max-width: 100%;
+    line-height: 1.5;
+  }
+  
+  /* Prevent content shift when keyboard appears */
+  body.keyboard-open .content {
+    transform: none !important;
   }
   
   .copyright {

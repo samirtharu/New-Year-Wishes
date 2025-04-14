@@ -9,37 +9,32 @@ function generateWish() {
         return;
     }
     
-    // Create personalized wish with animation
+    // Reset the output container
     wishOutput.innerHTML = '';
-    wishOutput.classList.add('active');
-
-    // Different wishes based on screen size (responsive content)
-    // let wish = '';
-    // if (window.innerWidth <= 600) {
-    //     // Shorter wish for mobile
-    //     wish = `Dear ${name}, may your new year be filled with joy and success! ✨`;
-    // } else {
-    //     // Longer wish for larger screens
-    //     wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
-    // }
-
+    wishOutput.className = 'wish-container active';
     
-    // Same wish for all devices
+    // Create the wish message
     const wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
     
-    // Apply typing animation for the wish
-    let i = 0;
-    const typingSpeed = 50; // milliseconds per character
-    
-    function typeWriter() {
-        if (i < wish.length) {
-            wishOutput.innerHTML += wish.charAt(i);
-            i++;
-            setTimeout(typeWriter, typingSpeed);
+    // Apply typing animation with proper error handling
+    try {
+        let i = 0;
+        const typingSpeed = 50; // milliseconds per character
+        
+        function typeWriter() {
+            if (i < wish.length) {
+                wishOutput.innerHTML += wish.charAt(i);
+                i++;
+                setTimeout(typeWriter, typingSpeed);
+            }
         }
+        
+        typeWriter();
+    } catch (error) {
+        // Fallback if animation fails
+        wishOutput.innerHTML = wish;
+        console.error("Animation error:", error);
     }
-    
-    typeWriter();
 }
 
 // Show error/success messages
@@ -61,18 +56,23 @@ function showMessage(text, type) {
     }, 3000);
 }
 
-// Add responsive event listener
+// Improved resize event listener that only triggers on significant width changes
+let prevWidth = window.innerWidth;
 window.addEventListener('resize', () => {
-    // Clear and regenerate wish if already displayed and window size changed significantly
-    const wishOutput = document.getElementById('wish-output');
-    const nameInput = document.getElementById('nameInput');
-    
-    if (wishOutput.textContent && nameInput.value.trim()) {
-        generateWish();
+    // Only regenerate if width changed by more than 50px (to avoid keyboard appearance issues)
+    if (Math.abs(prevWidth - window.innerWidth) > 50) {
+        prevWidth = window.innerWidth;
+        
+        const wishOutput = document.getElementById('wish-output');
+        const nameInput = document.getElementById('nameInput');
+        
+        if (wishOutput.textContent && nameInput.value.trim()) {
+            generateWish();
+        }
     }
 });
 
-// Initialize floating animations for background
+// Initialize animations for background
 document.addEventListener('DOMContentLoaded', () => {
     // Add scroll-based parallax effect to bulbs
     window.addEventListener('scroll', () => {
@@ -108,4 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
             content.style.transform = 'translateY(-5px)';
         });
     }
+    
+    // Add enter key support for form submission
+    const nameInput = document.getElementById('nameInput');
+    nameInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            generateWish();
+        }
+    });
 }); 
