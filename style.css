@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Melanie';
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 50%, #8fd3f4 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  animation: gradientShift 15s ease infinite;
+  background-size: 300% 300%;
+  flex-direction: column;
+  text-align: center;
+  color: #333;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Background Blurry Bulbs */
+.background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bulb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: float 12s infinite ease-in-out;
+}
+
+.bulb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 40%, #ff6b95, #ffaa5e);
+  top: -100px;
+  right: -50px;
+  animation-delay: 0s;
+  animation: float 12s infinite ease-in-out, pulse 8s infinite alternate;
+}
+
+.bulb-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle at 70% 60%, #4facfe, #00f2fe);
+  bottom: -150px;
+  left: -100px;
+  animation-delay: -3s;
+  animation: float 12s infinite ease-in-out, pulse 10s infinite alternate-reverse;
+}
+
+.bulb-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle at 40% 50%, #a18cd1, #fbc2eb);
+  top: 30%;
+  right: 10%;
+  animation-delay: -6s;
+  animation: float 12s infinite ease-in-out, pulse 9s infinite alternate;
+}
+
+.bulb-4 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, #84fab0, #8fd3f4);
+  top: 70%;
+  left: 15%;
+  animation-delay: -9s;
+  animation: float 12s infinite ease-in-out, pulse 7s infinite alternate-reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+    filter: blur(60px);
+  }
+  100% {
+    opacity: 0.7;
+    filter: blur(70px);
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.6), 
+              inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  width: 90%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2),
+              inset 0 1px 1px rgba(255, 255, 255, 0.7), 
+              inset 0 -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a6fa1;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.subtitle {
+  color: #4a6fa1;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.animate {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  padding: 12px 15px;
+  border: 2px solid #dde1e7;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 80%;
+  margin-bottom: 5px;
+}
+
+input:focus {
+  border-color: #a1c4fd;
+}
+
+button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 80%;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.wish-container {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #4a6fa1;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wish-container.active {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.wish-container.error {
+  background-color: rgba(255, 165, 165, 0.5);
+  color: #e74c3c;
+}
+
+.wish-container.success {
+  background-color: rgba(165, 255, 165, 0.5);
+  color: #27ae60;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #2f3235;
+  margin-top: 25px;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fix for iOS and Safari */
+@supports (-webkit-touch-callout: none) {
+  .content {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Ensure parallax effects don't cause horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* Large Desktop Screens */
+@media (min-width: 1400px) {
+  .content {
+    max-width: 600px;
+    padding: 40px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  input {
+    width: 70%;
+    padding: 15px 20px;
+  }
+  
+  button {
+    padding: 15px 30px;
+  }
+  
+  .bulb-1 {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .bulb-2 {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .bulb-3 {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .bulb-4 {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Medium Desktop Screens */
+@media (min-width: 1024px) {
+  .input-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  input {
+    margin-bottom: 0;
+    width: 60%;
+  }
+  
+  button {
+    width: auto;
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+  .content {
+    padding: 25px;
+    max-width: 450px;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+  }
+  
+  .input-container {
+    width: 100%;
+  }
+  
+  input, button {
+    width: 90%;
+  }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  
+  .content {
+    width: 95%;
+    max-width: 500px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  input {
+    width: 90%;
+  }
+  
+  .bulb {
+    filter: blur(50px);
+  }
+  
+  .bulb-1 {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .bulb-2 {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .bulb-3 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .bulb-4 {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 600px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+  }
+  
+  .content {
+    padding: 15px;
+    width: 96%;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  #wish-output {
+    font-size: 1rem;
+    padding: 8px;
+  }
+  
+  .input-container {
+    flex-direction: column;
+  }
+  
+  input, button {
+    width: 100%;
+  }
+}
+
+/* Mobile Portrait - Enhanced */
+@media (max-width: 600px) {
+  body {
+    padding: 15px 10px;
+  }
+  
+  .content {
+    padding: 30px 25px;
+    width: 94%;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    display: none;
+  }
+  
+  .bulb {
+    filter: blur(40px);
+    opacity: 0.4;
+  }
+  
+  input {
+    width: 100%;
+    padding: 12px 15px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px 15px;
+  }
+  
+  .input-container {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  input, button {
+    width: 100%;
+  }
+  
+  .wish-container {
+    font-size: 1.1rem;
+    padding: 15px;
+    margin-top: auto;
+    min-height: 120px;
+  }
+  
+  .copyright {
+    margin-top: 20px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 375px) {
+  body {
+    padding: 12px 8px;
+  }
+  
+  .content {
+    padding: 25px 20px;
+    width: 96%;
+    min-height: 480px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .wish-container {
+    font-size: 0.95rem;
+    padding: 12px;
+    min-height: 100px;
+  }
+  
+  .bulb-1, .bulb-2, .bulb-3, .bulb-4 {
+    opacity: 0.3;
+  }
+  
+  .subtitle {
+    display: none;
+  }
+  
+  .copyright {
+    margin-top: 15px;
+    font-size: 0.7rem;
+  }
+}
