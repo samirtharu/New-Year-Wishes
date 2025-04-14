@@ -12,16 +12,20 @@ function generateWish() {
     // Create personalized wish with animation
     wishOutput.innerHTML = '';
     wishOutput.classList.add('active');
-    
+
     // Different wishes based on screen size (responsive content)
-    let wish = '';
-    if (window.innerWidth <= 600) {
-        // Shorter wish for mobile
-        wish = `Dear ${name}, may your new year be filled with joy and success! ✨`;
-    } else {
-        // Longer wish for larger screens
-        wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
-    }
+    // let wish = '';
+    // if (window.innerWidth <= 600) {
+    //     // Shorter wish for mobile
+    //     wish = `Dear ${name}, may your new year be filled with joy and success! ✨`;
+    // } else {
+    //     // Longer wish for larger screens
+    //     wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
+    // }
+
+    
+    // Same wish for all devices
+    const wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
     
     // Apply typing animation for the wish
     let i = 0;
