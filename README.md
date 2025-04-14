@@ -2,7 +2,6 @@
 
 A beautiful, interactive web application that generates personalized New Year wishes. Features a modern design with animated background, responsive layout, and elegant animations.
 
-![New Year Wishes Preview](preview.png)
 
 ## ✨ Features
 
@@ -21,23 +20,9 @@ A beautiful, interactive web application that generates personalized New Year wi
 - Google Fonts
 - Bootstrap (for utility classes)
 
-## 🚀 Getting Started
-
-### Running Locally
-
-1. **Clone the repository**
-   ```
-   git clone https://github.com/username/New-Year-Wishes.git
-   cd New-Year-Wishes
-   ```
-
-2. **Open in browser**
-   - Simply open the `index.html` file in any modern web browser
-   - No server setup or build process required!
-
 ### Online Demo
 
-Visit [demo link](#) to see the application in action.
+Visit [https://samirtharu.github.io/New-Year-Wishes/](#) to see the application in action.
 
 ## 📁 Project Structure
 
@@ -49,46 +34,6 @@ New-Year-Wishes/
 └── README.md        # Project documentation
 ```
 
-## 🎨 Customization Options
-
-You can easily customize this project to fit your needs:
-
-### Changing the Year or Theme
-
-1. Open `index.html` and modify the title and heading:
-   ```html
-   <title>Happy New Year 2082 🎉</title>
-   <h1 class="animate">🎉 Happy New Year 2082 🎉</h1>
-   ```
-
-### Updating Colors
-
-1. Edit the gradient background in `style.css`:
-   ```css
-   body {
-     background: linear-gradient(135deg, #6e8efb 0%, #a777e3 50%, #8fd3f4 100%);
-   }
-   ```
-
-2. Change the button colors:
-   ```css
-   button {
-     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-   }
-   ```
-
-### Modifying Wish Messages
-
-Edit the wish generation logic in `script.js`:
-```javascript
-if (window.innerWidth <= 600) {
-    // Change mobile wish text here
-    wish = `Dear ${name}, may your new year be filled with joy and success! ✨`;
-} else {
-    // Change desktop wish text here
-    wish = `Dear ${name}, wishing you a year filled with new achievements, happiness, good health, and prosperity! ✨`;
-}
-```
 
 ## 📝 Future Enhancements
 
