@@ -484,8 +484,6 @@ html, body {
     margin-bottom: 15px;
   }
   
-
-  
   .bulb {
     filter: blur(40px);
     opacity: 0.4;
@@ -564,10 +562,6 @@ html, body {
   
   .bulb-1, .bulb-2, .bulb-3, .bulb-4 {
     opacity: 0.3;
-  }
-  
-  .subtitle {
-    display: none;
   }
   
   .copyright {
