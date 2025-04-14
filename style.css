@@ -473,15 +473,29 @@ html, body {
   .content {
     padding: 30px 25px;
     width: 94%;
-    min-height: 520px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 15px;
   }
   
   h1 {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    color: #4a6fa1;
+    font-weight: 500;
+    display: block;
+    opacity: 1;
+  }
+  
+  p {
+    margin-bottom: 10px;
   }
   
   .bulb {
@@ -502,7 +516,8 @@ html, body {
   
   .input-container {
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 100%;
   }
   
   input, button {
@@ -512,8 +527,8 @@ html, body {
   .wish-container {
     font-size: 1.1rem;
     padding: 15px;
-    margin-top: auto;
-    min-height: 120px;
+    margin-top: 15px;
+    min-height: 100px;
     max-width: 100%;
     line-height: 1.5;
   }
@@ -524,7 +539,8 @@ html, body {
   }
   
   .copyright {
-    margin-top: 20px;
+    margin-top: auto;
+    padding-top: 20px;
     font-size: 0.75rem;
   }
 }
@@ -538,15 +554,22 @@ html, body {
   .content {
     padding: 25px 20px;
     width: 96%;
-    min-height: 480px;
+    min-height: 500px;
   }
   
   h1 {
     font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
   }
   
   p {
     font-size: 0.9rem;
+    margin-bottom: 8px;
   }
   
   button {
@@ -557,7 +580,7 @@ html, body {
   .wish-container {
     font-size: 0.95rem;
     padding: 12px;
-    min-height: 100px;
+    min-height: 80px;
   }
   
   .bulb-1, .bulb-2, .bulb-3, .bulb-4 {
@@ -565,7 +588,8 @@ html, body {
   }
   
   .copyright {
-    margin-top: 15px;
+    margin-top: auto;
+    padding-top: 15px;
     font-size: 0.7rem;
   }
 }
