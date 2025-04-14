@@ -473,9 +473,9 @@ html, body {
     margin-bottom: 15px;
   }
   
-  .subtitle {
+  /* .subtitle {
     display: none;
-  }
+  } */
   
   .bulb {
     filter: blur(40px);
